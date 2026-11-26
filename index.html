@@ -1,0 +1,494 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/><link rel="stylesheet" href="/_next/static/css/2065034bdef5af6f.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-889906d2d9470bce.js"/><script src="/_next/static/chunks/fd9d1056-2821b0f0cabcd8bd.js" async=""></script><script src="/_next/static/chunks/23-bc0704c1190bca24.js" async=""></script><script src="/_next/static/chunks/main-app-58498602c3d9d518.js" async=""></script><script src="/_next/static/chunks/app/layout-b593515c147d9229.js" async=""></script><link rel="preload" href="/site.js" as="script"/><meta name="color-scheme" content="dark"/><title>Akash &amp; Amiduni — Wedding Invitation</title><meta name="description" content="Wedding invitation of Akash &amp; Amiduni — Sunday, 6 December 2026, Hotel Heritage, Badulla."/><script src="/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js" noModule=""></script></head><body><div><div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div class="petals" aria-hidden="true"><span class="petal"></span><span class="petal"></span><span class="petal"></span><span class="petal"></span><span class="petal"></span><span class="petal"></span><span class="petal"></span><span class="petal"></span></div>
+<!-- Welcome opening -->
+<div class="welcome" id="welcomeOverlay" role="dialog" aria-modal="true" aria-label="Open your wedding invitation">
+  <div class="welcome-card">
+    <div class="seal" aria-hidden="true">A&amp;A</div>
+    <p class="w-script">You're invited</p>
+    <h2>Akash &amp; Amiduni</h2>
+    <p class="w-date">Sunday · 6 December 2026 · Badulla</p>
+    <p class="w-note">Your invitation comes with music — <b>Swetha Sande</b> by Yasas Medagedara, from the film <i>Neera</i>, will start playing as you open it. Sound on for the full experience.</p>
+    <button class="btn btn-primary" id="openInviteBtn" type="button" style="width:100%;padding:16px 22px;font-size:14px">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+      Open Invitation
+    </button>
+    <br />
+    <button class="btn-skip" id="skipMusicBtn" type="button">Enter without music</button>
+  </div>
+</div>
+<!-- The wedding song is Swetha Sande by Yasas Medagedara (from the film Neera).
+     HOW TO ADD YOUR OWN MP3: put your MP3 file in this site's assets folder
+     and name it exactly  wedding-song.mp3  (so it sits at
+     assets/wedding-song.mp3 next to the photos). The first time a guest
+     presses play, the players below check for that file and, when it is
+     there, play it directly — fast, with no YouTube buffering — and the
+     seek bar, volume, speed and loop controls all work
+     on it. If that file is not there, the same song streams from YouTube
+     video xMMuAvf7qlo instead, so guests always hear Swetha Sande.
+     The audio element's src is set by script once the MP3 is confirmed
+     present, so a missing file never leaves a broken player behind. -->
+<audio id="weddingAudio" loop preload="metadata" playsinline></audio>
+
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="monogram" href="#top">A <span class="amp">&amp;</span> A <small>06 · 12 · 2026</small></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#story">Our Story</a>
+      <a href="#details">Details</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#song-player">Song</a>
+      <a href="#wishes">Wishes</a>
+      <a class="btn btn-primary" href="#rsvp">RSVP</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <p class="together">Together with their families</p>
+        <h1 class="names"><span class="word">Akash</span> <span class="amp">&amp;</span> <span class="word">Amiduni</span></h1>
+        <p class="hero-date">Sunday · 6 December 2026</p>
+        <p class="hero-venue">Hotel Heritage, Badulla — Ceremony at 10:00 AM, followed by lunch &amp; celebration</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#rsvp">RSVP Now</a>
+          <button class="btn btn-outline" id="calBtn" type="button">Add to Calendar</button>
+        </div>
+        <a class="scroll-cue" href="#story" aria-label="Scroll to explore"><i></i>Scroll to explore</a>
+      </div>
+      <div class="hero-img reveal rv-zoom tilt" id="heroTilt">
+        <div class="arch"><img id="heroParallaxImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-asset="hero" alt="Watercolour illustration of the bride and groom holding hands in a rose garden at golden hour" /></div>
+        <div class="hero-badge">
+          <div class="script">Save the date</div>
+          <p>06.12.2026 — we can't wait to celebrate with you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown" aria-label="Countdown to the wedding">
+    <p class="count-label">Counting down to forever</p>
+    <div class="count-grid">
+      <div class="count-box"><b id="cd-d">–</b><span>Days</span></div>
+      <div class="count-box"><b id="cd-h">–</b><span>Hours</span></div>
+      <div class="count-box"><b id="cd-m">–</b><span>Minutes</span></div>
+      <div class="count-box"><b id="cd-s">–</b><span>Seconds</span></div>
+    </div>
+  </div>
+
+  <!-- INVITATION -->
+  <section>
+    <div class="wrap invite-grid">
+      <div class="reveal"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-asset="details" alt="Watercolour flat lay of gold wedding rings, blush roses and an ivory invitation envelope" /></div>
+      <div class="invite-copy reveal">
+        <p class="eyebrow">You are invited</p>
+        <h2>With joyful hearts, we invite you to share in our celebration of love.</h2>
+        <p>Mr. &amp; Mrs. Vijaysiri together with Mr. &amp; Mrs. Kumara request the honour of your presence at the marriage of their children. Join us for a morning of blessings, a Poruwa ceremony, and an afternoon of food, music and dancing.</p>
+        <div class="parents">
+          <div class="parent-card">
+            <p class="role">The Bride</p>
+            <h3>Amiduni</h3>
+            <p>Daughter of Mr. &amp; Mrs. Vijaysiri</p>
+          </div>
+          <div class="parent-card">
+            <p class="role">The Groom</p>
+            <h3>Akash</h3>
+            <p>Son of Mr. &amp; Mrs. Kumara</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">How we got here</p>
+        <h2>Our Story</h2>
+        <div class="divider"><span>❦</span></div>
+      </div>
+      <div class="timeline">
+        <div class="t-item reveal rv-left">
+          <p class="when">2019 · First Meeting</p>
+          <h3>A rainy day in Kandy</h3>
+          <p>We met at a little bookshop café while sheltering from the rain. One shared umbrella and a very long conversation about books later, neither of us wanted the rain to stop.</p>
+        </div>
+        <div class="t-item reveal rv-right">
+          <p class="when">2022 · First Trip</p>
+          <h3>Chasing sunsets in Ella</h3>
+          <p>Our first trip together — misty train rides, Nine Arches Bridge at dawn, and the moment we both quietly knew this was something lasting.</p>
+        </div>
+        <div class="t-item reveal rv-left">
+          <p class="when">2025 · The Proposal</p>
+          <h3>She said yes</h3>
+          <p>Under string lights in the same garden where we'll marry, Akash got down on one knee. Through happy tears, Amiduni said the easiest "yes" of her life.</p>
+        </div>
+        <div class="t-item reveal rv-right">
+          <p class="when">2026 · Forever Begins</p>
+          <h3>And now, with you</h3>
+          <p>The best chapter is the one we write surrounded by the people we love most. Thank you for being part of our story.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN & WHERE -->
+  <section id="details">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">When &amp; Where</p>
+        <h2>The Celebration</h2>
+        <p>Both events are at the same venue — come for the vows, stay for the party.</p>
+        <div class="divider"><span>❦</span></div>
+      </div>
+      <div class="cards2">
+        <article class="event-card reveal rv-left tilt">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-asset="venue" alt="Watercolour illustration of the garden ceremony venue with a floral arch, white chairs and string lights" />
+          <div class="event-body">
+            <span class="tag">Ceremony</span>
+            <h3>The Poruwa Ceremony</h3>
+            <p>Hotel Heritage, Badulla</p>
+            <div class="event-meta">
+              <div><b>Date</b><span>Sun, 6 Dec 2026</span></div>
+              <div><b>Time</b><span>10:00 AM</span></div>
+            </div>
+            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Heritage+Badulla" target="_blank" rel="noopener">Open in Google Maps</a>
+          </div>
+        </article>
+        <article class="event-card reveal rv-right tilt">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-asset="details" alt="Watercolour detail of wedding rings and roses" />
+          <div class="event-body">
+            <span class="tag rose">Reception</span>
+            <h3>Lunch &amp; Reception</h3>
+            <p>Hotel Heritage — same venue, indoors</p>
+            <div class="event-meta">
+              <div><b>Starts</b><span>12:30 PM</span></div>
+              <div><b>Ends</b><span>5:00 PM</span></div>
+            </div>
+            <a class="btn btn-outline" href="#schedule">See the day's schedule</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule" style="padding-top:20px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Order of the day</p>
+        <h2>Schedule</h2>
+        <div class="divider"><span>❦</span></div>
+      </div>
+      <div class="schedule-list">
+        <div class="s-row reveal"><div class="s-time">9:30 AM</div><div class="s-dot"></div><div><h3>Guests Arrive</h3><p>Welcome drinks &amp; seating. Please arrive a little early.</p></div></div>
+        <div class="s-row reveal"><div class="s-time">10:00 AM</div><div class="s-dot"></div><div><h3>Poruwa Ceremony</h3><p>Traditional blessings and the exchange of vows under the floral arch.</p></div></div>
+        <div class="s-row reveal"><div class="s-time">11:30 AM</div><div class="s-dot"></div><div><h3>Photos &amp; Kiribath</h3><p>Group photos with family and friends, followed by milk rice and sweets.</p></div></div>
+        <div class="s-row reveal"><div class="s-time">12:30 PM</div><div class="s-dot"></div><div><h3>Lunch Reception</h3><p>A celebratory lunch, speeches and the cutting of the cake.</p></div></div>
+        <div class="s-row reveal"><div class="s-time">3:00 PM</div><div class="s-dot"></div><div><h3>Music &amp; Dancing</h3><p>Live band, first dance, and an open floor for everyone.</p></div></div>
+        <div class="s-row reveal"><div class="s-time">5:00 PM</div><div class="s-dot"></div><div><h3>Farewell</h3><p>Going-away blessings as the couple departs.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Moments</p>
+        <h2>Gallery</h2>
+        <p>Favourite moments — the two of us, the venue, and the little details of the day.</p>
+        <div class="divider"><span>❦</span></div>
+      </div>
+      <div class="g-grid">
+        <figure class="reveal tilt"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-asset="hero" alt="The couple in the rose garden" /><figcaption>"Every love story is beautiful…"</figcaption></figure>
+        <figure class="reveal tilt"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-asset="venue" alt="The garden venue set for the ceremony" /><figcaption>Where we'll say "I do"</figcaption></figure>
+        <figure class="reveal tilt"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-asset="details" alt="Rings, roses and the invitation envelope" /><figcaption>The little details</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Good to know</p>
+        <h2>Details for Guests</h2>
+        <div class="divider"><span>❦</span></div>
+      </div>
+      <div class="d-grid">
+        <div class="d-card reveal rv-zoom">
+          <div class="icon">👗</div>
+          <h3>Dress Code</h3>
+          <p>Formal attire. Soft pastels are welcome — please avoid white, which is reserved for the bride.</p>
+          <div class="swatches" aria-label="Suggested colours"><i style="background:#e9c4c0"></i><i style="background:#f7e9e6"></i><i style="background:#e8d5a8"></i><i style="background:#c9a69c"></i></div>
+        </div>
+        <div class="d-card reveal rv-zoom">
+          <div class="icon">🎁</div>
+          <h3>Gifts</h3>
+          <p>Your presence is the greatest gift. If you wish to give more, a small contribution to our honeymoon fund is warmly appreciated.</p>
+        </div>
+        <div class="d-card reveal rv-zoom">
+          <div class="icon">🅿️</div>
+          <h3>Parking &amp; Travel</h3>
+          <p>On-site parking is available at the hotel, and PickMe &amp; Uber drop-off is at the main entrance.</p>
+        </div>
+        <div class="d-card reveal rv-zoom">
+          <div class="icon">📸</div>
+          <h3>Photos</h3>
+          <p>We'd love an unplugged ceremony — please keep phones away during the vows, then snap away at the reception and tag our hashtag.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEDDING SONG PLAYER -->
+  <section class="song-sec" id="song-player">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Listen</p>
+        <h2>Our Wedding Song</h2>
+        <p>Press play to hear <b>Swetha Sande</b> by Yasas Medagedara — the song we chose for our day, from the film <i>Neera</i>. It plays straight from this site's own music file, so it starts right away; if that file can't be reached it streams from YouTube instead — the same song either way. Drag the progress bar to jump to any moment, skip back or forward, and adjust the volume and speed.</p>
+        <div class="divider"><span>❦</span></div>
+      </div>
+      <div class="player reveal rv-zoom" id="songPlayer">
+        <div class="player-disc" aria-hidden="true"><span class="disc-mono">A&amp;A</span></div>
+        <h3>Swetha Sande</h3>
+        <p class="p-sub">Yasas Medagedara · from the film Neera</p>
+        <p class="p-src" id="playerSrc" style="font-size:12.5px;color:var(--muted);margin:-2px 0 4px">Plays from this site's own MP3 file when added · YouTube backup</p>
+        <p class="p-status" id="playerStatus" role="status">Ready — tap play</p>
+        <div class="player-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="seek-row">
+          <span class="t cur" id="timeCur">0:00</span>
+          <input class="seek" id="seekBar" type="range" min="0" max="1000" value="0" step="1" aria-label="Seek through the wedding song" />
+          <span class="t tot" id="timeTot">–:––</span>
+        </div>
+        <div class="player-controls">
+          <button class="ctl-btn" id="restartBtn" type="button" aria-label="Restart song from the beginning" title="Restart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5V1L6 7l6 6V9a6 6 0 1 1-6 6H4a8 8 0 1 0 8-10z"/></svg>
+          </button>
+          <button class="ctl-btn" id="backBtn" type="button" aria-label="Back 10 seconds" title="Back 10 seconds">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5V1L6 7l6 6V9a6 6 0 1 1-6 6H4a8 8 0 1 0 8-10z"/><text class="skip-num" x="9.2" y="17.5">10</text></svg>
+          </button>
+          <button class="ctl-btn ctl-main" id="playerPlayBtn" type="button" aria-label="Play the wedding song">
+            <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+          </button>
+          <button class="ctl-btn" id="fwdBtn" type="button" aria-label="Forward 10 seconds" title="Forward 10 seconds">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5V1l6 6-6 6V9a6 6 0 1 0 6 6h2a8 8 0 1 1-8-10z"/><text class="skip-num" x="9.2" y="17.5">10</text></svg>
+          </button>
+          <button class="ctl-btn on" id="loopBtn" type="button" aria-label="Toggle loop" aria-pressed="true" title="Loop on/off">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 2l4 4-4 4V7H8a3 3 0 0 0-3 3v1H3v-1a5 5 0 0 1 5-5h9V2zM7 22l-4-4 4-4v3h9a3 3 0 0 0 3-3v-1h2v1a5 5 0 0 1-5 5H7v3z"/></svg>
+          </button>
+        </div>
+        <div class="player-tools">
+          <div class="tool">
+            <button class="mute-btn" id="muteBtn" type="button" aria-label="Mute the song">
+              <svg class="icon-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>
+              <svg class="icon-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.6 3l2.7-2.7-1.4-1.4-2.7 2.7-2.7-2.7-1.4 1.4 2.7 2.7-2.7 2.7 1.4 1.4 2.7-2.7 2.7 2.7 1.4-1.4-2.7-2.7z"/></svg>
+            </button>
+            <input id="playerVol" type="range" min="0" max="100" value="20" aria-label="Player volume" />
+          </div>
+          <div class="tool">
+            <label for="speedSel">Speed</label>
+            <select id="speedSel">
+              <option value="0.75">0.75×</option>
+              <option value="1" selected>1× Normal</option>
+              <option value="1.25">1.25×</option>
+              <option value="1.5">1.5×</option>
+            </select>
+          </div>
+        </div>
+        <p class="player-note">This player and the small floating player at the bottom of the page are connected — start Swetha Sande in either one and both stay in sync. The song plays from this site's own MP3 file (<b>assets/wedding-song.mp3</b>) for the fastest start; if that file isn't in the assets folder, it streams from YouTube instead.<br />Song not starting? Tap play again — or <a href="https://youtu.be/xMMuAvf7qlo" target="_blank" rel="noopener">watch Swetha Sande on YouTube</a> · <a href="https://songhub.lk/song/sweatha-sande-yasas-medagedara" target="_blank" rel="noopener">listen on Songhub</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp" id="rsvp">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Be our guest</p>
+        <h2>RSVP</h2>
+        <p>Kindly respond by 20 November 2026 so we can save your seat (and your slice of cake).</p>
+      </div>
+      <form class="rsvp-card reveal" id="rsvpForm" novalidate>
+        <div class="row2">
+          <div class="field">
+            <label for="guestName">Your full name</label>
+            <input type="text" id="guestName" placeholder="Your full name" autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="guestPhone">Phone / Email</label>
+            <input type="text" id="guestPhone" placeholder="07X XXX XXXX" autocomplete="tel" />
+          </div>
+        </div>
+        <div class="field">
+          <label>Will you attend?</label>
+          <div class="attend-grid">
+            <label class="attend-opt">
+              <input type="radio" name="attend" value="Joyfully Accepts" checked />
+              <span class="box"><b>Joyfully Accepts</b><span>Can't wait to celebrate!</span></span>
+            </label>
+            <label class="attend-opt">
+              <input type="radio" name="attend" value="Regretfully Declines" />
+              <span class="box"><b>Regretfully Declines</b><span>Will be there in spirit</span></span>
+            </label>
+          </div>
+        </div>
+        <div class="row2" id="attendFields">
+          <div class="field">
+            <label>Number of guests</label>
+            <div class="stepper">
+              <button type="button" id="gMinus" aria-label="Fewer guests">−</button>
+              <output id="gCount">2</output>
+              <button type="button" id="gPlus" aria-label="More guests">+</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="meal">Meal preference</label>
+            <select id="meal">
+              <option>Regular</option>
+              <option>Vegetarian</option>
+              <option>Vegan</option>
+              <option>Halal</option>
+              <option>No preference</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="song">Song request / message for the couple</label>
+          <textarea id="song" placeholder="A song that will get you on the dance floor…"></textarea>
+        </div>
+        <div class="rsvp-actions">
+          <button class="btn btn-gold" type="submit" id="rsvpSubmit" style="flex:1">Send My RSVP</button>
+        </div>
+        <div class="confirm-box" id="confirmBox" role="status">
+          <h3 id="confirmTitle">Thank you!</h3>
+          <p id="confirmText"></p>
+          <div class="rsvp-actions">
+            <button class="btn btn-outline" type="button" id="icsBtn2">Add to Calendar</button>
+          </div>
+        </div>
+        <!-- ============================================================
+             EmailJS — ACTIVE. RSVPs are emailed straight from this page
+             via EmailJS — no guest's email app ever opens.
+             Service: service_uxiabj7 · Template: template_a79qy9s
+             The template receives: {{title}}, {{name}}, {{attending}},
+             {{guests}}, {{phone}}, {{meal}}, {{message}} and {{time}}
+             (time = submission timestamp). The delivery address is set
+             by the "To Email" field inside the EmailJS template.
+             ============================================================ -->
+        <p class="rsvp-owner-note"><b>Site owner note:</b> RSVP replies are sent directly from this page using <b>EmailJS</b> — guests never leave the site and no email app opens. On success guests see a thank-you here; if sending fails they see a clear error and can tap Send My RSVP to try again.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- GUEST WISHES -->
+  <section id="wishes" style="padding-top:20px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Leave your love</p>
+        <h2>Guest Wishes</h2>
+        <p>Write a blessing for the couple — it appears on the wishes wall below, right away.</p>
+        <div class="divider"><span>❦</span></div>
+      </div>
+      <form class="wish-form reveal" id="wishForm">
+        <div class="row2">
+          <div class="field">
+            <label for="wishName">Your name</label>
+            <input type="text" id="wishName" placeholder="e.g. Sanduni" autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="wishMsg">Your wish</label>
+            <input type="text" id="wishMsg" placeholder="Wishing you a lifetime of…" />
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Add My Wish to the Wall</button>
+      </form>
+      <div class="wish-wall" id="wishWall">
+        <div class="wish-empty" id="wishEmpty">Be the first to leave a wish for Akash &amp; Amiduni…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Questions</p>
+        <h2>FAQ</h2>
+        <div class="divider"><span>❦</span></div>
+      </div>
+      <div class="faq">
+        <details class="reveal"><summary>Can I bring a plus-one?</summary><p>Plus-ones are welcome where indicated on your invitation. If you're unsure, just mention it in your RSVP message and we'll confirm.</p></details>
+        <details class="reveal"><summary>Are children invited?</summary><p>We love your little ones! Children are warmly welcome at both the ceremony and reception — there's a garden play area at the venue.</p></details>
+        <details class="reveal"><summary>What if it rains?</summary><p>The hotel has a beautiful indoor hall as a rain plan, so the celebration goes ahead, rain or shine.</p></details>
+        <details class="reveal"><summary>When should I RSVP by?</summary><p>Please respond by 20 November 2026 so we can finalise seating and catering numbers.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="script">Akash &amp; Amiduni</div>
+  <p>Sunday, 6 December 2026 · Hotel Heritage, Badulla</p>
+  <p class="hashtag">#AkashAndAmiduni</p>
+  <p>Made with love — we can't wait to celebrate with you.</p>
+  <p style="margin-top:20px"><a class="btn btn-outline" href="#top">↑ Back to top</a></p>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top">↑</button>
+
+<!-- Floating music player -->
+<div class="music-dock" id="musicDock" role="region" aria-label="Swetha Sande song player">
+  <button class="play-btn" id="playBtn" type="button" aria-label="Play Swetha Sande">
+    <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+  </button>
+  <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="music-meta">
+    <div class="m-title">Swetha Sande</div>
+    <div class="m-sub">Yasas Medagedara · Neera</div>
+    <div class="music-prog" aria-hidden="true"><i id="musicProgFill"></i></div>
+  </div>
+  <input class="music-vol" id="musicVol" type="range" min="0" max="100" value="20" aria-label="Music volume" />
+</div>
+
+<!-- Gallery lightbox -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <figure>
+    <img id="lbImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-asset="hero" alt="The couple in the rose garden" />
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="Close photo viewer">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Previous photo">‹</button>
+  <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Next photo">›</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+
+<!-- EmailJS browser SDK v4.4.1 (official @emailjs/browser build) — EMBEDDED in this
+     file instead of loaded from a CDN. The previous version loaded the SDK from
+     cdn.jsdelivr.net; whenever that request failed (blocked CDN, ad-blocker,
+     webview or a flaky connection) window.emailjs was undefined and EVERY RSVP
+     failed instantly with "Hmm, that didn't go through" — even though EmailJS
+     itself was fine. Embedded, the SDK is always present; the RSVP script below
+     initialises it with the owner's keys from the EMAILJS CONFIG block, and can
+     also POST straight to the EmailJS API as a second path. -->
+
+
+<!-- Swetha Sande on YouTube (video xMMuAvf7qlo) — official IFrame Player API.
+     This is the BACKUP source: it is used only when the site's own MP3
+     (assets/wedding-song.mp3) has not been added or cannot be reached.
+     The player sits off-screen; the site's own players below control it.
+     If neither source can load, the players show a tap-to-retry message —
+     no different song is ever played in its place. -->
+<div id="ytSongWrap" aria-hidden="true" style="position:fixed;left:-9999px;top:0;width:160px;height:90px;overflow:hidden;opacity:0;pointer-events:none"><div id="ytSong"></div></div></div><script src="/_next/static/chunks/webpack-889906d2d9470bce.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/css/2065034bdef5af6f.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"2:I[5751,[],\"\"]\n5:I[9275,[],\"\"]\n6:I[1343,[],\"\"]\n7:I[4080,[\"185\",\"static/chunks/app/layout-b593515c147d9229.js\"],\"\"]\n9:I[6130,[],\"\"]\n4:T6bfc,"])</script><script>self.__next_f.push([1,"\u003cdiv class=\"scroll-progress\" id=\"scrollProgress\" aria-hidden=\"true\"\u003e\u003c/div\u003e\n\u003cdiv class=\"petals\" aria-hidden=\"true\"\u003e\u003cspan class=\"petal\"\u003e\u003c/span\u003e\u003cspan class=\"petal\"\u003e\u003c/span\u003e\u003cspan class=\"petal\"\u003e\u003c/span\u003e\u003cspan class=\"petal\"\u003e\u003c/span\u003e\u003cspan class=\"petal\"\u003e\u003c/span\u003e\u003cspan class=\"petal\"\u003e\u003c/span\u003e\u003cspan class=\"petal\"\u003e\u003c/span\u003e\u003cspan class=\"petal\"\u003e\u003c/span\u003e\u003c/div\u003e\n\u003c!-- Welcome opening --\u003e\n\u003cdiv class=\"welcome\" id=\"welcomeOverlay\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Open your wedding invitation\"\u003e\n  \u003cdiv class=\"welcome-card\"\u003e\n    \u003cdiv class=\"seal\" aria-hidden=\"true\"\u003eA\u0026amp;A\u003c/div\u003e\n    \u003cp class=\"w-script\"\u003eYou're invited\u003c/p\u003e\n    \u003ch2\u003eAkash \u0026amp; Amiduni\u003c/h2\u003e\n    \u003cp class=\"w-date\"\u003eSunday · 6 December 2026 · Badulla\u003c/p\u003e\n    \u003cp class=\"w-note\"\u003eYour invitation comes with music — \u003cb\u003eSwetha Sande\u003c/b\u003e by Yasas Medagedara, from the film \u003ci\u003eNeera\u003c/i\u003e, will start playing as you open it. Sound on for the full experience.\u003c/p\u003e\n    \u003cbutton class=\"btn btn-primary\" id=\"openInviteBtn\" type=\"button\" style=\"width:100%;padding:16px 22px;font-size:14px\"\u003e\n      \u003csvg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"\u003e\u003cpath d=\"M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z\"/\u003e\u003c/svg\u003e\n      Open Invitation\n    \u003c/button\u003e\n    \u003cbr /\u003e\n    \u003cbutton class=\"btn-skip\" id=\"skipMusicBtn\" type=\"button\"\u003eEnter without music\u003c/button\u003e\n  \u003c/div\u003e\n\u003c/div\u003e\n\u003c!-- The wedding song is Swetha Sande by Yasas Medagedara (from the film Neera).\n     HOW TO ADD YOUR OWN MP3: put your MP3 file in this site's assets folder\n     and name it exactly  wedding-song.mp3  (so it sits at\n     assets/wedding-song.mp3 next to the photos). The first time a guest\n     presses play, the players below check for that file and, when it is\n     there, play it directly — fast, with no YouTube buffering — and the\n     seek bar, volume, speed and loop controls all work\n     on it. If that file is not there, the same song streams from YouTube\n     video xMMuAvf7qlo instead, so guests always hear Swetha Sande.\n     The audio element's src is set by script once the MP3 is confirmed\n     present, so a missing file never leaves a broken player behind. --\u003e\n\u003caudio id=\"weddingAudio\" loop preload=\"metadata\" playsinline\u003e\u003c/audio\u003e\n\n\n\u003cheader class=\"nav\"\u003e\n  \u003cdiv class=\"nav-inner\"\u003e\n    \u003ca class=\"monogram\" href=\"#top\"\u003eA \u003cspan class=\"amp\"\u003e\u0026amp;\u003c/span\u003e A \u003csmall\u003e06 · 12 · 2026\u003c/small\u003e\u003c/a\u003e\n    \u003cnav class=\"nav-links\" aria-label=\"Sections\"\u003e\n      \u003ca href=\"#story\"\u003eOur Story\u003c/a\u003e\n      \u003ca href=\"#details\"\u003eDetails\u003c/a\u003e\n      \u003ca href=\"#schedule\"\u003eSchedule\u003c/a\u003e\n      \u003ca href=\"#gallery\"\u003eGallery\u003c/a\u003e\n      \u003ca href=\"#song-player\"\u003eSong\u003c/a\u003e\n      \u003ca href=\"#wishes\"\u003eWishes\u003c/a\u003e\n      \u003ca class=\"btn btn-primary\" href=\"#rsvp\"\u003eRSVP\u003c/a\u003e\n    \u003c/nav\u003e\n  \u003c/div\u003e\n\u003c/header\u003e\n\n\u003cmain id=\"top\"\u003e\n  \u003c!-- HERO --\u003e\n  \u003cdiv class=\"hero\"\u003e\n    \u003cdiv class=\"wrap hero-grid\"\u003e\n      \u003cdiv class=\"hero-copy reveal\"\u003e\n        \u003cp class=\"together\"\u003eTogether with their families\u003c/p\u003e\n        \u003ch1 class=\"names\"\u003e\u003cspan class=\"word\"\u003eAkash\u003c/span\u003e \u003cspan class=\"amp\"\u003e\u0026amp;\u003c/span\u003e \u003cspan class=\"word\"\u003eAmiduni\u003c/span\u003e\u003c/h1\u003e\n        \u003cp class=\"hero-date\"\u003eSunday · 6 December 2026\u003c/p\u003e\n        \u003cp class=\"hero-venue\"\u003eHotel Heritage, Badulla — Ceremony at 10:00 AM, followed by lunch \u0026amp; celebration\u003c/p\u003e\n        \u003cdiv class=\"hero-actions\"\u003e\n          \u003ca class=\"btn btn-primary\" href=\"#rsvp\"\u003eRSVP Now\u003c/a\u003e\n          \u003cbutton class=\"btn btn-outline\" id=\"calBtn\" type=\"button\"\u003eAdd to Calendar\u003c/button\u003e\n        \u003c/div\u003e\n        \u003ca class=\"scroll-cue\" href=\"#story\" aria-label=\"Scroll to explore\"\u003e\u003ci\u003e\u003c/i\u003eScroll to explore\u003c/a\u003e\n      \u003c/div\u003e\n      \u003cdiv class=\"hero-img reveal rv-zoom tilt\" id=\"heroTilt\"\u003e\n        \u003cdiv class=\"arch\"\u003e\u003cimg id=\"heroParallaxImg\" src=\"data:image/gif;base64,R0lGODlhAQABAAAAACw=\" data-asset=\"hero\" alt=\"Watercolour illustration of the bride and groom holding hands in a rose garden at golden hour\" /\u003e\u003c/div\u003e\n        \u003cdiv class=\"hero-badge\"\u003e\n          \u003cdiv class=\"script\"\u003eSave the date\u003c/div\u003e\n          \u003cp\u003e06.12.2026 — we can't wait to celebrate with you.\u003c/p\u003e\n        \u003c/div\u003e\n      \u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/div\u003e\n\n  \u003c!-- COUNTDOWN --\u003e\n  \u003cdiv class=\"countdown\" aria-label=\"Countdown to the wedding\"\u003e\n    \u003cp class=\"count-label\"\u003eCounting down to forever\u003c/p\u003e\n    \u003cdiv class=\"count-grid\"\u003e\n      \u003cdiv class=\"count-box\"\u003e\u003cb id=\"cd-d\"\u003e–\u003c/b\u003e\u003cspan\u003eDays\u003c/span\u003e\u003c/div\u003e\n      \u003cdiv class=\"count-box\"\u003e\u003cb id=\"cd-h\"\u003e–\u003c/b\u003e\u003cspan\u003eHours\u003c/span\u003e\u003c/div\u003e\n      \u003cdiv class=\"count-box\"\u003e\u003cb id=\"cd-m\"\u003e–\u003c/b\u003e\u003cspan\u003eMinutes\u003c/span\u003e\u003c/div\u003e\n      \u003cdiv class=\"count-box\"\u003e\u003cb id=\"cd-s\"\u003e–\u003c/b\u003e\u003cspan\u003eSeconds\u003c/span\u003e\u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/div\u003e\n\n  \u003c!-- INVITATION --\u003e\n  \u003csection\u003e\n    \u003cdiv class=\"wrap invite-grid\"\u003e\n      \u003cdiv class=\"reveal\"\u003e\u003cimg src=\"data:image/gif;base64,R0lGODlhAQABAAAAACw=\" data-asset=\"details\" alt=\"Watercolour flat lay of gold wedding rings, blush roses and an ivory invitation envelope\" /\u003e\u003c/div\u003e\n      \u003cdiv class=\"invite-copy reveal\"\u003e\n        \u003cp class=\"eyebrow\"\u003eYou are invited\u003c/p\u003e\n        \u003ch2\u003eWith joyful hearts, we invite you to share in our celebration of love.\u003c/h2\u003e\n        \u003cp\u003eMr. \u0026amp; Mrs. Vijaysiri together with Mr. \u0026amp; Mrs. Kumara request the honour of your presence at the marriage of their children. Join us for a morning of blessings, a Poruwa ceremony, and an afternoon of food, music and dancing.\u003c/p\u003e\n        \u003cdiv class=\"parents\"\u003e\n          \u003cdiv class=\"parent-card\"\u003e\n            \u003cp class=\"role\"\u003eThe Bride\u003c/p\u003e\n            \u003ch3\u003eAmiduni\u003c/h3\u003e\n            \u003cp\u003eDaughter of Mr. \u0026amp; Mrs. Vijaysiri\u003c/p\u003e\n          \u003c/div\u003e\n          \u003cdiv class=\"parent-card\"\u003e\n            \u003cp class=\"role\"\u003eThe Groom\u003c/p\u003e\n            \u003ch3\u003eAkash\u003c/h3\u003e\n            \u003cp\u003eSon of Mr. \u0026amp; Mrs. Kumara\u003c/p\u003e\n          \u003c/div\u003e\n        \u003c/div\u003e\n      \u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/section\u003e\n\n  \u003c!-- STORY --\u003e\n  \u003csection class=\"story\" id=\"story\"\u003e\n    \u003cdiv class=\"wrap\"\u003e\n      \u003cdiv class=\"section-head reveal\"\u003e\n        \u003cp class=\"eyebrow\"\u003eHow we got here\u003c/p\u003e\n        \u003ch2\u003eOur Story\u003c/h2\u003e\n        \u003cdiv class=\"divider\"\u003e\u003cspan\u003e❦\u003c/span\u003e\u003c/div\u003e\n      \u003c/div\u003e\n      \u003cdiv class=\"timeline\"\u003e\n        \u003cdiv class=\"t-item reveal rv-left\"\u003e\n          \u003cp class=\"when\"\u003e2019 · First Meeting\u003c/p\u003e\n          \u003ch3\u003eA rainy day in Kandy\u003c/h3\u003e\n          \u003cp\u003eWe met at a little bookshop café while sheltering from the rain. One shared umbrella and a very long conversation about books later, neither of us wanted the rain to stop.\u003c/p\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"t-item reveal rv-right\"\u003e\n          \u003cp class=\"when\"\u003e2022 · First Trip\u003c/p\u003e\n          \u003ch3\u003eChasing sunsets in Ella\u003c/h3\u003e\n          \u003cp\u003eOur first trip together — misty train rides, Nine Arches Bridge at dawn, and the moment we both quietly knew this was something lasting.\u003c/p\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"t-item reveal rv-left\"\u003e\n          \u003cp class=\"when\"\u003e2025 · The Proposal\u003c/p\u003e\n          \u003ch3\u003eShe said yes\u003c/h3\u003e\n          \u003cp\u003eUnder string lights in the same garden where we'll marry, Akash got down on one knee. Through happy tears, Amiduni said the easiest \"yes\" of her life.\u003c/p\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"t-item reveal rv-right\"\u003e\n          \u003cp class=\"when\"\u003e2026 · Forever Begins\u003c/p\u003e\n          \u003ch3\u003eAnd now, with you\u003c/h3\u003e\n          \u003cp\u003eThe best chapter is the one we write surrounded by the people we love most. Thank you for being part of our story.\u003c/p\u003e\n        \u003c/div\u003e\n      \u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/section\u003e\n\n  \u003c!-- WHEN \u0026 WHERE --\u003e\n  \u003csection id=\"details\"\u003e\n    \u003cdiv class=\"wrap\"\u003e\n      \u003cdiv class=\"section-head reveal\"\u003e\n        \u003cp class=\"eyebrow\"\u003eWhen \u0026amp; Where\u003c/p\u003e\n        \u003ch2\u003eThe Celebration\u003c/h2\u003e\n        \u003cp\u003eBoth events are at the same venue — come for the vows, stay for the party.\u003c/p\u003e\n        \u003cdiv class=\"divider\"\u003e\u003cspan\u003e❦\u003c/span\u003e\u003c/div\u003e\n      \u003c/div\u003e\n      \u003cdiv class=\"cards2\"\u003e\n        \u003carticle class=\"event-card reveal rv-left tilt\"\u003e\n          \u003cimg src=\"data:image/gif;base64,R0lGODlhAQABAAAAACw=\" data-asset=\"venue\" alt=\"Watercolour illustration of the garden ceremony venue with a floral arch, white chairs and string lights\" /\u003e\n          \u003cdiv class=\"event-body\"\u003e\n            \u003cspan class=\"tag\"\u003eCeremony\u003c/span\u003e\n            \u003ch3\u003eThe Poruwa Ceremony\u003c/h3\u003e\n            \u003cp\u003eHotel Heritage, Badulla\u003c/p\u003e\n            \u003cdiv class=\"event-meta\"\u003e\n              \u003cdiv\u003e\u003cb\u003eDate\u003c/b\u003e\u003cspan\u003eSun, 6 Dec 2026\u003c/span\u003e\u003c/div\u003e\n              \u003cdiv\u003e\u003cb\u003eTime\u003c/b\u003e\u003cspan\u003e10:00 AM\u003c/span\u003e\u003c/div\u003e\n            \u003c/div\u003e\n            \u003ca class=\"btn btn-outline\" href=\"https://www.google.com/maps/search/?api=1\u0026amp;query=Hotel+Heritage+Badulla\" target=\"_blank\" rel=\"noopener\"\u003eOpen in Google Maps\u003c/a\u003e\n          \u003c/div\u003e\n        \u003c/article\u003e\n        \u003carticle class=\"event-card reveal rv-right tilt\"\u003e\n          \u003cimg src=\"data:image/gif;base64,R0lGODlhAQABAAAAACw=\" data-asset=\"details\" alt=\"Watercolour detail of wedding rings and roses\" /\u003e\n          \u003cdiv class=\"event-body\"\u003e\n            \u003cspan class=\"tag rose\"\u003eReception\u003c/span\u003e\n            \u003ch3\u003eLunch \u0026amp; Reception\u003c/h3\u003e\n            \u003cp\u003eHotel Heritage — same venue, indoors\u003c/p\u003e\n            \u003cdiv class=\"event-meta\"\u003e\n              \u003cdiv\u003e\u003cb\u003eStarts\u003c/b\u003e\u003cspan\u003e12:30 PM\u003c/span\u003e\u003c/div\u003e\n              \u003cdiv\u003e\u003cb\u003eEnds\u003c/b\u003e\u003cspan\u003e5:00 PM\u003c/span\u003e\u003c/div\u003e\n            \u003c/div\u003e\n            \u003ca class=\"btn btn-outline\" href=\"#schedule\"\u003eSee the day's schedule\u003c/a\u003e\n          \u003c/div\u003e\n        \u003c/article\u003e\n      \u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/section\u003e\n\n  \u003c!-- SCHEDULE --\u003e\n  \u003csection id=\"schedule\" style=\"padding-top:20px\"\u003e\n    \u003cdiv class=\"wrap\"\u003e\n      \u003cdiv class=\"section-head reveal\"\u003e\n        \u003cp class=\"eyebrow\"\u003eOrder of the day\u003c/p\u003e\n        \u003ch2\u003eSchedule\u003c/h2\u003e\n        \u003cdiv class=\"divider\"\u003e\u003cspan\u003e❦\u003c/span\u003e\u003c/div\u003e\n      \u003c/div\u003e\n      \u003cdiv class=\"schedule-list\"\u003e\n        \u003cdiv class=\"s-row reveal\"\u003e\u003cdiv class=\"s-time\"\u003e9:30 AM\u003c/div\u003e\u003cdiv class=\"s-dot\"\u003e\u003c/div\u003e\u003cdiv\u003e\u003ch3\u003eGuests Arrive\u003c/h3\u003e\u003cp\u003eWelcome drinks \u0026amp; seating. Please arrive a little early.\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\n        \u003cdiv class=\"s-row reveal\"\u003e\u003cdiv class=\"s-time\"\u003e10:00 AM\u003c/div\u003e\u003cdiv class=\"s-dot\"\u003e\u003c/div\u003e\u003cdiv\u003e\u003ch3\u003ePoruwa Ceremony\u003c/h3\u003e\u003cp\u003eTraditional blessings and the exchange of vows under the floral arch.\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\n        \u003cdiv class=\"s-row reveal\"\u003e\u003cdiv class=\"s-time\"\u003e11:30 AM\u003c/div\u003e\u003cdiv class=\"s-dot\"\u003e\u003c/div\u003e\u003cdiv\u003e\u003ch3\u003ePhotos \u0026amp; Kiribath\u003c/h3\u003e\u003cp\u003eGroup photos with family and friends, followed by milk rice and sweets.\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\n        \u003cdiv class=\"s-row reveal\"\u003e\u003cdiv class=\"s-time\"\u003e12:30 PM\u003c/div\u003e\u003cdiv class=\"s-dot\"\u003e\u003c/div\u003e\u003cdiv\u003e\u003ch3\u003eLunch Reception\u003c/h3\u003e\u003cp\u003eA celebratory lunch, speeches and the cutting of the cake.\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\n        \u003cdiv class=\"s-row reveal\"\u003e\u003cdiv class=\"s-time\"\u003e3:00 PM\u003c/div\u003e\u003cdiv class=\"s-dot\"\u003e\u003c/div\u003e\u003cdiv\u003e\u003ch3\u003eMusic \u0026amp; Dancing\u003c/h3\u003e\u003cp\u003eLive band, first dance, and an open floor for everyone.\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\n        \u003cdiv class=\"s-row reveal\"\u003e\u003cdiv class=\"s-time\"\u003e5:00 PM\u003c/div\u003e\u003cdiv class=\"s-dot\"\u003e\u003c/div\u003e\u003cdiv\u003e\u003ch3\u003eFarewell\u003c/h3\u003e\u003cp\u003eGoing-away blessings as the couple departs.\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\n      \u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/section\u003e\n\n  \u003c!-- GALLERY --\u003e\n  \u003csection class=\"gallery\" id=\"gallery\"\u003e\n    \u003cdiv class=\"wrap\"\u003e\n      \u003cdiv class=\"section-head reveal\"\u003e\n        \u003cp class=\"eyebrow\"\u003eMoments\u003c/p\u003e\n        \u003ch2\u003eGallery\u003c/h2\u003e\n        \u003cp\u003eFavourite moments — the two of us, the venue, and the little details of the day.\u003c/p\u003e\n        \u003cdiv class=\"divider\"\u003e\u003cspan\u003e❦\u003c/span\u003e\u003c/div\u003e\n      \u003c/div\u003e\n      \u003cdiv class=\"g-grid\"\u003e\n        \u003cfigure class=\"reveal tilt\"\u003e\u003cimg src=\"data:image/gif;base64,R0lGODlhAQABAAAAACw=\" data-asset=\"hero\" alt=\"The couple in the rose garden\" /\u003e\u003cfigcaption\u003e\"Every love story is beautiful…\"\u003c/figcaption\u003e\u003c/figure\u003e\n        \u003cfigure class=\"reveal tilt\"\u003e\u003cimg src=\"data:image/gif;base64,R0lGODlhAQABAAAAACw=\" data-asset=\"venue\" alt=\"The garden venue set for the ceremony\" /\u003e\u003cfigcaption\u003eWhere we'll say \"I do\"\u003c/figcaption\u003e\u003c/figure\u003e\n        \u003cfigure class=\"reveal tilt\"\u003e\u003cimg src=\"data:image/gif;base64,R0lGODlhAQABAAAAACw=\" data-asset=\"details\" alt=\"Rings, roses and the invitation envelope\" /\u003e\u003cfigcaption\u003eThe little details\u003c/figcaption\u003e\u003c/figure\u003e\n      \u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/section\u003e\n\n  \u003c!-- DETAILS --\u003e\n  \u003csection\u003e\n    \u003cdiv class=\"wrap\"\u003e\n      \u003cdiv class=\"section-head reveal\"\u003e\n        \u003cp class=\"eyebrow\"\u003eGood to know\u003c/p\u003e\n        \u003ch2\u003eDetails for Guests\u003c/h2\u003e\n        \u003cdiv class=\"divider\"\u003e\u003cspan\u003e❦\u003c/span\u003e\u003c/div\u003e\n      \u003c/div\u003e\n      \u003cdiv class=\"d-grid\"\u003e\n        \u003cdiv class=\"d-card reveal rv-zoom\"\u003e\n          \u003cdiv class=\"icon\"\u003e👗\u003c/div\u003e\n          \u003ch3\u003eDress Code\u003c/h3\u003e\n          \u003cp\u003eFormal attire. Soft pastels are welcome — please avoid white, which is reserved for the bride.\u003c/p\u003e\n          \u003cdiv class=\"swatches\" aria-label=\"Suggested colours\"\u003e\u003ci style=\"background:#e9c4c0\"\u003e\u003c/i\u003e\u003ci style=\"background:#f7e9e6\"\u003e\u003c/i\u003e\u003ci style=\"background:#e8d5a8\"\u003e\u003c/i\u003e\u003ci style=\"background:#c9a69c\"\u003e\u003c/i\u003e\u003c/div\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"d-card reveal rv-zoom\"\u003e\n          \u003cdiv class=\"icon\"\u003e🎁\u003c/div\u003e\n          \u003ch3\u003eGifts\u003c/h3\u003e\n          \u003cp\u003eYour presence is the greatest gift. If you wish to give more, a small contribution to our honeymoon fund is warmly appreciated.\u003c/p\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"d-card reveal rv-zoom\"\u003e\n          \u003cdiv class=\"icon\"\u003e🅿️\u003c/div\u003e\n          \u003ch3\u003eParking \u0026amp; Travel\u003c/h3\u003e\n          \u003cp\u003eOn-site parking is available at the hotel, and PickMe \u0026amp; Uber drop-off is at the main entrance.\u003c/p\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"d-card reveal rv-zoom\"\u003e\n          \u003cdiv class=\"icon\"\u003e📸\u003c/div\u003e\n          \u003ch3\u003ePhotos\u003c/h3\u003e\n          \u003cp\u003eWe'd love an unplugged ceremony — please keep phones away during the vows, then snap away at the reception and tag our hashtag.\u003c/p\u003e\n        \u003c/div\u003e\n      \u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/section\u003e\n\n  \u003c!-- WEDDING SONG PLAYER --\u003e\n  \u003csection class=\"song-sec\" id=\"song-player\"\u003e\n    \u003cdiv class=\"wrap\"\u003e\n      \u003cdiv class=\"section-head reveal\"\u003e\n        \u003cp class=\"eyebrow\"\u003eListen\u003c/p\u003e\n        \u003ch2\u003eOur Wedding Song\u003c/h2\u003e\n        \u003cp\u003ePress play to hear \u003cb\u003eSwetha Sande\u003c/b\u003e by Yasas Medagedara — the song we chose for our day, from the film \u003ci\u003eNeera\u003c/i\u003e. It plays straight from this site's own music file, so it starts right away; if that file can't be reached it streams from YouTube instead — the same song either way. Drag the progress bar to jump to any moment, skip back or forward, and adjust the volume and speed.\u003c/p\u003e\n        \u003cdiv class=\"divider\"\u003e\u003cspan\u003e❦\u003c/span\u003e\u003c/div\u003e\n      \u003c/div\u003e\n      \u003cdiv class=\"player reveal rv-zoom\" id=\"songPlayer\"\u003e\n        \u003cdiv class=\"player-disc\" aria-hidden=\"true\"\u003e\u003cspan class=\"disc-mono\"\u003eA\u0026amp;A\u003c/span\u003e\u003c/div\u003e\n        \u003ch3\u003eSwetha Sande\u003c/h3\u003e\n        \u003cp class=\"p-sub\"\u003eYasas Medagedara · from the film Neera\u003c/p\u003e\n        \u003cp class=\"p-src\" id=\"playerSrc\" style=\"font-size:12.5px;color:var(--muted);margin:-2px 0 4px\"\u003ePlays from this site's own MP3 file when added · YouTube backup\u003c/p\u003e\n        \u003cp class=\"p-status\" id=\"playerStatus\" role=\"status\"\u003eReady — tap play\u003c/p\u003e\n        \u003cdiv class=\"player-bars\" aria-hidden=\"true\"\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003c/div\u003e\n        \u003cdiv class=\"seek-row\"\u003e\n          \u003cspan class=\"t cur\" id=\"timeCur\"\u003e0:00\u003c/span\u003e\n          \u003cinput class=\"seek\" id=\"seekBar\" type=\"range\" min=\"0\" max=\"1000\" value=\"0\" step=\"1\" aria-label=\"Seek through the wedding song\" /\u003e\n          \u003cspan class=\"t tot\" id=\"timeTot\"\u003e–:––\u003c/span\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"player-controls\"\u003e\n          \u003cbutton class=\"ctl-btn\" id=\"restartBtn\" type=\"button\" aria-label=\"Restart song from the beginning\" title=\"Restart\"\u003e\n            \u003csvg viewBox=\"0 0 24 24\" aria-hidden=\"true\"\u003e\u003cpath d=\"M12 5V1L6 7l6 6V9a6 6 0 1 1-6 6H4a8 8 0 1 0 8-10z\"/\u003e\u003c/svg\u003e\n          \u003c/button\u003e\n          \u003cbutton class=\"ctl-btn\" id=\"backBtn\" type=\"button\" aria-label=\"Back 10 seconds\" title=\"Back 10 seconds\"\u003e\n            \u003csvg viewBox=\"0 0 24 24\" aria-hidden=\"true\"\u003e\u003cpath d=\"M12 5V1L6 7l6 6V9a6 6 0 1 1-6 6H4a8 8 0 1 0 8-10z\"/\u003e\u003ctext class=\"skip-num\" x=\"9.2\" y=\"17.5\"\u003e10\u003c/text\u003e\u003c/svg\u003e\n          \u003c/button\u003e\n          \u003cbutton class=\"ctl-btn ctl-main\" id=\"playerPlayBtn\" type=\"button\" aria-label=\"Play the wedding song\"\u003e\n            \u003csvg class=\"icon-play\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"\u003e\u003cpath d=\"M8 5v14l11-7z\"/\u003e\u003c/svg\u003e\n            \u003csvg class=\"icon-pause\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"\u003e\u003cpath d=\"M6 5h4v14H6zM14 5h4v14h-4z\"/\u003e\u003c/svg\u003e\n          \u003c/button\u003e\n          \u003cbutton class=\"ctl-btn\" id=\"fwdBtn\" type=\"button\" aria-label=\"Forward 10 seconds\" title=\"Forward 10 seconds\"\u003e\n            \u003csvg viewBox=\"0 0 24 24\" aria-hidden=\"true\"\u003e\u003cpath d=\"M12 5V1l6 6-6 6V9a6 6 0 1 0 6 6h2a8 8 0 1 1-8-10z\"/\u003e\u003ctext class=\"skip-num\" x=\"9.2\" y=\"17.5\"\u003e10\u003c/text\u003e\u003c/svg\u003e\n          \u003c/button\u003e\n          \u003cbutton class=\"ctl-btn on\" id=\"loopBtn\" type=\"button\" aria-label=\"Toggle loop\" aria-pressed=\"true\" title=\"Loop on/off\"\u003e\n            \u003csvg viewBox=\"0 0 24 24\" aria-hidden=\"true\"\u003e\u003cpath d=\"M17 2l4 4-4 4V7H8a3 3 0 0 0-3 3v1H3v-1a5 5 0 0 1 5-5h9V2zM7 22l-4-4 4-4v3h9a3 3 0 0 0 3-3v-1h2v1a5 5 0 0 1-5 5H7v3z\"/\u003e\u003c/svg\u003e\n          \u003c/button\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"player-tools\"\u003e\n          \u003cdiv class=\"tool\"\u003e\n            \u003cbutton class=\"mute-btn\" id=\"muteBtn\" type=\"button\" aria-label=\"Mute the song\"\u003e\n              \u003csvg class=\"icon-sound\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"\u003e\u003cpath d=\"M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z\"/\u003e\u003c/svg\u003e\n              \u003csvg class=\"icon-muted\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"\u003e\u003cpath d=\"M3 9v6h4l5 5V4L7 9H3zm13.6 3l2.7-2.7-1.4-1.4-2.7 2.7-2.7-2.7-1.4 1.4 2.7 2.7-2.7 2.7 1.4 1.4 2.7-2.7 2.7 2.7 1.4-1.4-2.7-2.7z\"/\u003e\u003c/svg\u003e\n            \u003c/button\u003e\n            \u003cinput id=\"playerVol\" type=\"range\" min=\"0\" max=\"100\" value=\"20\" aria-label=\"Player volume\" /\u003e\n          \u003c/div\u003e\n          \u003cdiv class=\"tool\"\u003e\n            \u003clabel for=\"speedSel\"\u003eSpeed\u003c/label\u003e\n            \u003cselect id=\"speedSel\"\u003e\n              \u003coption value=\"0.75\"\u003e0.75×\u003c/option\u003e\n              \u003coption value=\"1\" selected\u003e1× Normal\u003c/option\u003e\n              \u003coption value=\"1.25\"\u003e1.25×\u003c/option\u003e\n              \u003coption value=\"1.5\"\u003e1.5×\u003c/option\u003e\n            \u003c/select\u003e\n          \u003c/div\u003e\n        \u003c/div\u003e\n        \u003cp class=\"player-note\"\u003eThis player and the small floating player at the bottom of the page are connected — start Swetha Sande in either one and both stay in sync. The song plays from this site's own MP3 file (\u003cb\u003eassets/wedding-song.mp3\u003c/b\u003e) for the fastest start; if that file isn't in the assets folder, it streams from YouTube instead.\u003cbr /\u003eSong not starting? Tap play again — or \u003ca href=\"https://youtu.be/xMMuAvf7qlo\" target=\"_blank\" rel=\"noopener\"\u003ewatch Swetha Sande on YouTube\u003c/a\u003e · \u003ca href=\"https://songhub.lk/song/sweatha-sande-yasas-medagedara\" target=\"_blank\" rel=\"noopener\"\u003elisten on Songhub\u003c/a\u003e.\u003c/p\u003e\n      \u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/section\u003e\n\n  \u003c!-- RSVP --\u003e\n  \u003csection class=\"rsvp\" id=\"rsvp\"\u003e\n    \u003cdiv class=\"wrap\"\u003e\n      \u003cdiv class=\"section-head reveal\"\u003e\n        \u003cp class=\"eyebrow\"\u003eBe our guest\u003c/p\u003e\n        \u003ch2\u003eRSVP\u003c/h2\u003e\n        \u003cp\u003eKindly respond by 20 November 2026 so we can save your seat (and your slice of cake).\u003c/p\u003e\n      \u003c/div\u003e\n      \u003cform class=\"rsvp-card reveal\" id=\"rsvpForm\" novalidate\u003e\n        \u003cdiv class=\"row2\"\u003e\n          \u003cdiv class=\"field\"\u003e\n            \u003clabel for=\"guestName\"\u003eYour full name\u003c/label\u003e\n            \u003cinput type=\"text\" id=\"guestName\" placeholder=\"Your full name\" autocomplete=\"name\" /\u003e\n          \u003c/div\u003e\n          \u003cdiv class=\"field\"\u003e\n            \u003clabel for=\"guestPhone\"\u003ePhone / Email\u003c/label\u003e\n            \u003cinput type=\"text\" id=\"guestPhone\" placeholder=\"07X XXX XXXX\" autocomplete=\"tel\" /\u003e\n          \u003c/div\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"field\"\u003e\n          \u003clabel\u003eWill you attend?\u003c/label\u003e\n          \u003cdiv class=\"attend-grid\"\u003e\n            \u003clabel class=\"attend-opt\"\u003e\n              \u003cinput type=\"radio\" name=\"attend\" value=\"Joyfully Accepts\" checked /\u003e\n              \u003cspan class=\"box\"\u003e\u003cb\u003eJoyfully Accepts\u003c/b\u003e\u003cspan\u003eCan't wait to celebrate!\u003c/span\u003e\u003c/span\u003e\n            \u003c/label\u003e\n            \u003clabel class=\"attend-opt\"\u003e\n              \u003cinput type=\"radio\" name=\"attend\" value=\"Regretfully Declines\" /\u003e\n              \u003cspan class=\"box\"\u003e\u003cb\u003eRegretfully Declines\u003c/b\u003e\u003cspan\u003eWill be there in spirit\u003c/span\u003e\u003c/span\u003e\n            \u003c/label\u003e\n          \u003c/div\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"row2\" id=\"attendFields\"\u003e\n          \u003cdiv class=\"field\"\u003e\n            \u003clabel\u003eNumber of guests\u003c/label\u003e\n            \u003cdiv class=\"stepper\"\u003e\n              \u003cbutton type=\"button\" id=\"gMinus\" aria-label=\"Fewer guests\"\u003e−\u003c/button\u003e\n              \u003coutput id=\"gCount\"\u003e2\u003c/output\u003e\n              \u003cbutton type=\"button\" id=\"gPlus\" aria-label=\"More guests\"\u003e+\u003c/button\u003e\n            \u003c/div\u003e\n          \u003c/div\u003e\n          \u003cdiv class=\"field\"\u003e\n            \u003clabel for=\"meal\"\u003eMeal preference\u003c/label\u003e\n            \u003cselect id=\"meal\"\u003e\n              \u003coption\u003eRegular\u003c/option\u003e\n              \u003coption\u003eVegetarian\u003c/option\u003e\n              \u003coption\u003eVegan\u003c/option\u003e\n              \u003coption\u003eHalal\u003c/option\u003e\n              \u003coption\u003eNo preference\u003c/option\u003e\n            \u003c/select\u003e\n          \u003c/div\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"field\"\u003e\n          \u003clabel for=\"song\"\u003eSong request / message for the couple\u003c/label\u003e\n          \u003ctextarea id=\"song\" placeholder=\"A song that will get you on the dance floor…\"\u003e\u003c/textarea\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"rsvp-actions\"\u003e\n          \u003cbutton class=\"btn btn-gold\" type=\"submit\" id=\"rsvpSubmit\" style=\"flex:1\"\u003eSend My RSVP\u003c/button\u003e\n        \u003c/div\u003e\n        \u003cdiv class=\"confirm-box\" id=\"confirmBox\" role=\"status\"\u003e\n          \u003ch3 id=\"confirmTitle\"\u003eThank you!\u003c/h3\u003e\n          \u003cp id=\"confirmText\"\u003e\u003c/p\u003e\n          \u003cdiv class=\"rsvp-actions\"\u003e\n            \u003cbutton class=\"btn btn-outline\" type=\"button\" id=\"icsBtn2\"\u003eAdd to Calendar\u003c/button\u003e\n          \u003c/div\u003e\n        \u003c/div\u003e\n        \u003c!-- ============================================================\n             EmailJS — ACTIVE. RSVPs are emailed straight from this page\n             via EmailJS — no guest's email app ever opens.\n             Service: service_uxiabj7 · Template: template_a79qy9s\n             The template receives: {{title}}, {{name}}, {{attending}},\n             {{guests}}, {{phone}}, {{meal}}, {{message}} and {{time}}\n             (time = submission timestamp). The delivery address is set\n             by the \"To Email\" field inside the EmailJS template.\n             ============================================================ --\u003e\n        \u003cp class=\"rsvp-owner-note\"\u003e\u003cb\u003eSite owner note:\u003c/b\u003e RSVP replies are sent directly from this page using \u003cb\u003eEmailJS\u003c/b\u003e — guests never leave the site and no email app opens. On success guests see a thank-you here; if sending fails they see a clear error and can tap Send My RSVP to try again.\u003c/p\u003e\n      \u003c/form\u003e\n    \u003c/div\u003e\n  \u003c/section\u003e\n\n  \u003c!-- GUEST WISHES --\u003e\n  \u003csection id=\"wishes\" style=\"padding-top:20px\"\u003e\n    \u003cdiv class=\"wrap\"\u003e\n      \u003cdiv class=\"section-head reveal\"\u003e\n        \u003cp class=\"eyebrow\"\u003eLeave your love\u003c/p\u003e\n        \u003ch2\u003eGuest Wishes\u003c/h2\u003e\n        \u003cp\u003eWrite a blessing for the couple — it appears on the wishes wall below, right away.\u003c/p\u003e\n        \u003cdiv class=\"divider\"\u003e\u003cspan\u003e❦\u003c/span\u003e\u003c/div\u003e\n      \u003c/div\u003e\n      \u003cform class=\"wish-form reveal\" id=\"wishForm\"\u003e\n        \u003cdiv class=\"row2\"\u003e\n          \u003cdiv class=\"field\"\u003e\n            \u003clabel for=\"wishName\"\u003eYour name\u003c/label\u003e\n            \u003cinput type=\"text\" id=\"wishName\" placeholder=\"e.g. Sanduni\" autocomplete=\"name\" /\u003e\n          \u003c/div\u003e\n          \u003cdiv class=\"field\"\u003e\n            \u003clabel for=\"wishMsg\"\u003eYour wish\u003c/label\u003e\n            \u003cinput type=\"text\" id=\"wishMsg\" placeholder=\"Wishing you a lifetime of…\" /\u003e\n          \u003c/div\u003e\n        \u003c/div\u003e\n        \u003cbutton class=\"btn btn-primary\" type=\"submit\" style=\"width:100%\"\u003eAdd My Wish to the Wall\u003c/button\u003e\n      \u003c/form\u003e\n      \u003cdiv class=\"wish-wall\" id=\"wishWall\"\u003e\n        \u003cdiv class=\"wish-empty\" id=\"wishEmpty\"\u003eBe the first to leave a wish for Akash \u0026amp; Amiduni…\u003c/div\u003e\n      \u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/section\u003e\n\n  \u003c!-- FAQ --\u003e\n  \u003csection\u003e\n    \u003cdiv class=\"wrap\"\u003e\n      \u003cdiv class=\"section-head reveal\"\u003e\n        \u003cp class=\"eyebrow\"\u003eQuestions\u003c/p\u003e\n        \u003ch2\u003eFAQ\u003c/h2\u003e\n        \u003cdiv class=\"divider\"\u003e\u003cspan\u003e❦\u003c/span\u003e\u003c/div\u003e\n      \u003c/div\u003e\n      \u003cdiv class=\"faq\"\u003e\n        \u003cdetails class=\"reveal\"\u003e\u003csummary\u003eCan I bring a plus-one?\u003c/summary\u003e\u003cp\u003ePlus-ones are welcome where indicated on your invitation. If you're unsure, just mention it in your RSVP message and we'll confirm.\u003c/p\u003e\u003c/details\u003e\n        \u003cdetails class=\"reveal\"\u003e\u003csummary\u003eAre children invited?\u003c/summary\u003e\u003cp\u003eWe love your little ones! Children are warmly welcome at both the ceremony and reception — there's a garden play area at the venue.\u003c/p\u003e\u003c/details\u003e\n        \u003cdetails class=\"reveal\"\u003e\u003csummary\u003eWhat if it rains?\u003c/summary\u003e\u003cp\u003eThe hotel has a beautiful indoor hall as a rain plan, so the celebration goes ahead, rain or shine.\u003c/p\u003e\u003c/details\u003e\n        \u003cdetails class=\"reveal\"\u003e\u003csummary\u003eWhen should I RSVP by?\u003c/summary\u003e\u003cp\u003ePlease respond by 20 November 2026 so we can finalise seating and catering numbers.\u003c/p\u003e\u003c/details\u003e\n      \u003c/div\u003e\n    \u003c/div\u003e\n  \u003c/section\u003e\n\u003c/main\u003e\n\n\u003cfooter\u003e\n  \u003cdiv class=\"script\"\u003eAkash \u0026amp; Amiduni\u003c/div\u003e\n  \u003cp\u003eSunday, 6 December 2026 · Hotel Heritage, Badulla\u003c/p\u003e\n  \u003cp class=\"hashtag\"\u003e#AkashAndAmiduni\u003c/p\u003e\n  \u003cp\u003eMade with love — we can't wait to celebrate with you.\u003c/p\u003e\n  \u003cp style=\"margin-top:20px\"\u003e\u003ca class=\"btn btn-outline\" href=\"#top\"\u003e↑ Back to top\u003c/a\u003e\u003c/p\u003e\n\u003c/footer\u003e\n\n\u003cbutton class=\"to-top\" id=\"toTop\" type=\"button\" aria-label=\"Back to top\"\u003e↑\u003c/button\u003e\n\n\u003c!-- Floating music player --\u003e\n\u003cdiv class=\"music-dock\" id=\"musicDock\" role=\"region\" aria-label=\"Swetha Sande song player\"\u003e\n  \u003cbutton class=\"play-btn\" id=\"playBtn\" type=\"button\" aria-label=\"Play Swetha Sande\"\u003e\n    \u003csvg class=\"icon-play\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"\u003e\u003cpath d=\"M8 5v14l11-7z\"/\u003e\u003c/svg\u003e\n    \u003csvg class=\"icon-pause\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"\u003e\u003cpath d=\"M6 5h4v14H6zM14 5h4v14h-4z\"/\u003e\u003c/svg\u003e\n  \u003c/button\u003e\n  \u003cdiv class=\"eq\" aria-hidden=\"true\"\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003c/i\u003e\u003c/div\u003e\n  \u003cdiv class=\"music-meta\"\u003e\n    \u003cdiv class=\"m-title\"\u003eSwetha Sande\u003c/div\u003e\n    \u003cdiv class=\"m-sub\"\u003eYasas Medagedara · Neera\u003c/div\u003e\n    \u003cdiv class=\"music-prog\" aria-hidden=\"true\"\u003e\u003ci id=\"musicProgFill\"\u003e\u003c/i\u003e\u003c/div\u003e\n  \u003c/div\u003e\n  \u003cinput class=\"music-vol\" id=\"musicVol\" type=\"range\" min=\"0\" max=\"100\" value=\"20\" aria-label=\"Music volume\" /\u003e\n\u003c/div\u003e\n\n\u003c!-- Gallery lightbox --\u003e\n\u003cdiv class=\"lightbox\" id=\"lightbox\" hidden role=\"dialog\" aria-modal=\"true\" aria-label=\"Photo viewer\"\u003e\n  \u003cfigure\u003e\n    \u003cimg id=\"lbImg\" src=\"data:image/gif;base64,R0lGODlhAQABAAAAACw=\" data-asset=\"hero\" alt=\"The couple in the rose garden\" /\u003e\n    \u003cfigcaption id=\"lbCap\"\u003e\u003c/figcaption\u003e\n  \u003c/figure\u003e\n  \u003cbutton class=\"lb-btn lb-close\" id=\"lbClose\" type=\"button\" aria-label=\"Close photo viewer\"\u003e✕\u003c/button\u003e\n  \u003cbutton class=\"lb-btn lb-prev\" id=\"lbPrev\" type=\"button\" aria-label=\"Previous photo\"\u003e‹\u003c/button\u003e\n  \u003cbutton class=\"lb-btn lb-next\" id=\"lbNext\" type=\"button\" aria-label=\"Next photo\"\u003e›\u003c/button\u003e\n\u003c/div\u003e\n\n\u003cdiv class=\"toast\" id=\"toast\" role=\"status\" aria-live=\"polite\"\u003e\u003c/div\u003e\n\n\n\u003c!-- EmailJS browser SDK v4.4.1 (official @emailjs/browser build) — EMBEDDED in this\n     file instead of loaded from a CDN. The previous version loaded the SDK from\n     cdn.jsdelivr.net; whenever that request failed (blocked CDN, ad-blocker,\n     webview or a flaky connection) window.emailjs was undefined and EVERY RSVP\n     failed instantly with \"Hmm, that didn't go through\" — even though EmailJS\n     itself was fine. Embedded, the SDK is always present; the RSVP script below\n     initialises it with the owner's keys from the EMAILJS CONFIG block, and can\n     also POST straight to the EmailJS API as a second path. --\u003e\n\n\n\u003c!-- Swetha Sande on YouTube (video xMMuAvf7qlo) — official IFrame Player API.\n     This is the BACKUP source: it is used only when the site's own MP3\n     (assets/wedding-song.mp3) has not been added or cannot be reached.\n     The player sits off-screen; the site's own players below control it.\n     If neither source can load, the players show a tap-to-retry message —\n     no different song is ever played in its place. --\u003e\n\u003cdiv id=\"ytSongWrap\" aria-hidden=\"true\" style=\"position:fixed;left:-9999px;top:0;width:160px;height:90px;overflow:hidden;opacity:0;pointer-events:none\"\u003e\u003cdiv id=\"ytSong\"\u003e\u003c/div\u003e\u003c/div\u003e"])</script><script>self.__next_f.push([1,"a:[]\n"])</script><script>self.__next_f.push([1,"0:[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/2065034bdef5af6f.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"$L2\",null,{\"buildId\":\"erULtiKY0iOmjlpdijiV2\",\"assetPrefix\":\"\",\"initialCanonicalUrl\":\"/\",\"initialTree\":[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"__PAGE__\",{},[[\"$L3\",[\"$\",\"div\",null,{\"suppressHydrationWarning\":true,\"dangerouslySetInnerHTML\":{\"__html\":\"$4\"}}]],null],null]},[[\"$\",\"html\",null,{\"lang\":\"en\",\"suppressHydrationWarning\":true,\"children\":[\"$\",\"body\",null,{\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L6\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[],\"styles\":null}],[\"$\",\"$L7\",null,{\"src\":\"/site.js\",\"strategy\":\"afterInteractive\"}]]}]}],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$L8\"],\"globalErrorComponent\":\"$9\",\"missingSlots\":\"$Wa\"}]]\n"])</script><script>self.__next_f.push([1,"8:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1, viewport-fit=cover\"}],[\"$\",\"meta\",\"1\",{\"name\":\"color-scheme\",\"content\":\"dark\"}],[\"$\",\"meta\",\"2\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"3\",{\"children\":\"Akash \u0026 Amiduni — Wedding Invitation\"}],[\"$\",\"meta\",\"4\",{\"name\":\"description\",\"content\":\"Wedding invitation of Akash \u0026 Amiduni — Sunday, 6 December 2026, Hotel Heritage, Badulla.\"}]]\n3:null\n"])</script></body></html>
